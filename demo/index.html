@@ -6,20 +6,35 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<script type="text/javascript" src='../js/lib/jquery-1.11.0.min.js'></script>
 	<script type="text/javascript">
-		
+		$(function(){
+			var timer = null;
+
+			$('body').click(function () {
+				clearInterval(timer);
+			})
+
+			$('#backtop').click(function () {	
+				 timer = setInterval(function () {
+				 	var scrollValue  = $('body').scrollTop();
+
+				 	//此处用除法和转为负数相加  真的很奇妙  注意取整
+				 	var changed  = - Math.ceil(scrollValue/6);
+				 	scrollValue += changed;
+
+					$('body').scrollTop(scrollValue);
+
+				 	//清除事件
+				 	if(scrollValue <= 0) {
+				 		clearInterval(timer);
+				 	}
+				 },30);
+
+
+			})
+		})
 	</script>
 </head>
 <body>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
-	<a href="" id="item">hello world</a>
 	<div id="main">
 		<img src="../img/taobao.png" alt="taobao">
 	</div>
