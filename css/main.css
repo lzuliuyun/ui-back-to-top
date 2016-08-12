@@ -1,0 +1,23 @@
+#main {
+	width: 1192px;
+	margin: 0 auto;  /*居中*/
+}
+
+#backtop {
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	background: url(../img/top_bg.png) no-repeat left top;
+	left: 50%;
+	margin-left: 605px;
+	bottom: 30px;
+}
+
+#backtop:hover {
+	background: url(../img/top_bg.png) no-repeat left -40px;
+}
+
+a {
+	width: 100px;
+	height: 200px;
+}
