@@ -9,8 +9,17 @@
 		$(function(){
 			var timer = null;
 
-			$('body').click(function () {
-				clearInterval(timer);
+			$(window).scroll(function () {
+				var height  = $(window).height();
+				var curHeight  = $(window).scrollTop();
+				if(curHeight <=  height)
+				{
+					$('#backtop').hide();
+				}
+				else
+				{
+					$('#backtop').show();
+				}
 			})
 
 			$('#backtop').click(function () {	
